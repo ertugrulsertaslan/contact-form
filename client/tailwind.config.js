@@ -9,7 +9,7 @@ export default {
         118: "40rem",
       },
       backgroundImage: {
-        mail: "url('/copilot2.jpg')",
+        mail: "url('/sendMail.jpg')",
       },
     },
   },
