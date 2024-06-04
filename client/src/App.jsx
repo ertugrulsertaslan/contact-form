@@ -203,15 +203,6 @@ function App() {
                           />
                         )}
                       />
-
-                      {errors?.phone?.message ? (
-                        <small className="text-xs text-red-500 h-3 mt-1 m-0 p-0">
-                          {errors?.phone?.message}
-                        </small>
-                      ) : (
-                        ""
-                      )}
-
                       <small className="text-xs text-red-500 h-3 mt-1">
                         {errors?.phone?.message}
                       </small>
