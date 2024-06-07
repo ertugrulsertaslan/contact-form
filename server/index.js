@@ -37,11 +37,14 @@ app.post(
   body("email").isEmail().withMessage("Must be a valid e-mail address").bail(),
   body("phone")
     .notEmpty()
+    .withMessage("Phone cannot be null")
+    .bail()
     .isNumeric()
     .withMessage("Must be a valid phone number"),
   body("message")
     .notEmpty()
     .withMessage("Message cannot be null")
+    .bail()
     .isLength({ min: 3 })
     .withMessage("Message must have min 3 characters"),
 
