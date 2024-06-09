@@ -45,11 +45,16 @@ app.post(
     .notEmpty()
     .withMessage("Message cannot be null")
     .bail()
-    .isLength({ min: 3 })
+    .isLength({ min: 1 })
     .withMessage("Message must have min 3 characters"),
 
   (req, res) => {
     const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+      res
+        .status(400)
+        .json({ success: false, message: { errors: errors.array() } });
+    }
 
     const { firstname, lastname, message, email, phone } = req.body;
     const htmlContent = `
@@ -88,14 +93,14 @@ app.post(
     };
 
     transporter.sendMail(mailOptions, function (error, info) {
-      if (!errors.isEmpty()) {
+      if (error) {
         res
           .status(400)
-          .json({ success: false, message: { errors: errors.array() } });
+          .json({ success: false, message: "Email could not be sent" });
       } else {
         res
           .status(200)
-          .json({ success: true, message: "Email sent successfully" });
+          .json({ success: true, message: "Email successfully sent" });
       }
     });
   }

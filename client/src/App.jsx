@@ -220,6 +220,10 @@ function App() {
                       defaultValue=""
                       rules={{
                         required: "Message is Required",
+                        minLength: {
+                          value: 1,
+                          message: "Min 3 characters",
+                        },
                       }}
                       control={control}
                       render={({ field }) => (
