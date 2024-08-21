@@ -2,6 +2,13 @@
 
 This application allows users to submit their contact information and messages to the administrator of the page.
 
+### Screenshots 📸
+
+<div style="display: flex; flex-direction: row;">
+    <img src="screenshots/form-page.png" alt="Home Page" style="width: 57%; margin-right: 4%;">
+    <img src="screenshots/form-error.png" alt="error" style="width: 42%;">
+</div>
+
 ## Features ✨
 
 - 📝 Users can submit their contact information and messages by filling out a form.
@@ -83,12 +90,7 @@ after running scripts go to `http://localhost:5173` with your browser to use the
 3. 📧📩 The content of the contact form is sent to your email address.
 
 
-### Screenshots 📸
 
-<div style="display: flex; flex-direction: row;">
-    <img src="screenshots/form-page.png" alt="Home Page" style="width: 57%; margin-right: 4%;">
-    <img src="screenshots/form-error.png" alt="error" style="width: 42%;">
-</div>
 
 
 ## License 📄
